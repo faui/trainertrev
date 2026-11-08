@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Private toolkit for Trevor. Not linked from the site. Keep it out of search engines. -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>My toolkit | Trainer Trev</title>
+  <link rel="icon" href="../favicon.ico" sizes="32x32">
+  <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="../apple-touch-icon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    body{background:var(--plum);color:var(--butter)}
+    .me{padding:48px 0 80px}
+    .me-head{display:flex;align-items:center;gap:18px;margin-bottom:32px}
+    .me-head img{width:72px;height:72px;flex:none;border-radius:12px}
+    .me-head h1{font-size:clamp(2rem,6vw,3rem);margin:0}
+    .me-head p{color:var(--pool);margin:6px 0 0}
+    .me h2{font-size:1.2rem;margin:44px 0 14px;color:var(--pool);letter-spacing:.02em}
+    .lock{max-width:420px;padding:26px;border-radius:18px;background:rgba(255,240,194,.06);border:1px solid rgba(255,240,194,.2)}
+    .lock label{display:block;font-weight:700;margin-bottom:10px}
+    .lock input[type=password]{width:100%;font:inherit;font-size:1.05rem;padding:12px 14px;border-radius:12px;border:2px solid rgba(255,240,194,.4);background:rgba(0,0,0,.25);color:var(--butter)}
+    .lock input[type=password]:focus{outline:3px solid var(--tang);outline-offset:2px}
+    .lock .row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:16px;flex-wrap:wrap}
+    .lock .remember{display:flex;align-items:center;gap:8px;color:var(--pool);font-size:.92rem}
+    .lock .remember label{margin:0;font-weight:400}
+    .lock .msg{min-height:1.4em;margin-top:12px;color:#FFB59C;font-size:.92rem}
+    .lock .btn-primary{background:var(--tang);border-color:var(--tang);color:var(--plum)}
+    .docs{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+    .doc{display:flex;flex-direction:column;gap:6px;padding:20px;border-radius:16px;background:rgba(255,240,194,.06);border:1px solid rgba(255,240,194,.2);color:var(--butter);text-decoration:none}
+    .doc:hover{border-color:var(--pool);color:var(--butter)}
+    .doc strong{font:800 1.1rem var(--display)}
+    .doc span{color:var(--pool);font-size:.92rem}
+    .doc em{font-style:normal;font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--tang);margin-top:auto;padding-top:8px}
+    .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:12px;margin-top:14px}
+    .cards a{display:block;border-radius:12px;overflow:hidden;border:1px solid rgba(255,240,194,.2);background:var(--butter)}
+    .cards a:hover{border-color:var(--pool)}
+    .cards img{display:block;width:100%;height:auto}
+    .note{color:var(--pool);font-size:.9rem;margin-top:48px}
+    .linkish{background:none;border:0;padding:0;font:inherit;color:var(--butter);text-decoration:underline;cursor:pointer}
+    .todo-intro{color:var(--pool);margin:0 0 6px}
+    .progress{height:10px;border-radius:99px;background:rgba(255,240,194,.15);overflow:hidden;margin:12px 0 4px}
+    .progress i{display:block;height:100%;width:0;background:var(--tang);transition:width .25s}
+    .todo-group h3{font:800 1rem var(--display);margin:26px 0 10px;color:var(--butter)}
+    .item{padding:14px 16px;border-radius:14px;background:rgba(255,240,194,.06);border:1px solid rgba(255,240,194,.2);margin-bottom:10px}
+    .item.done{border-color:var(--pool)}
+    .item label.tick{display:flex;gap:12px;align-items:flex-start;font-weight:700;cursor:pointer}
+    .item input[type=checkbox]{width:22px;height:22px;flex:none;margin-top:1px;accent-color:var(--tang)}
+    .item textarea,.send input[type=text],.send input[type=email]{width:100%;font:inherit;margin-top:10px;padding:10px 12px;border-radius:10px;border:2px solid rgba(255,240,194,.3);background:rgba(0,0,0,.25);color:var(--butter);resize:vertical}
+    .item textarea{min-height:44px}
+    .item textarea:focus,.send input:focus{outline:3px solid var(--tang);outline-offset:2px}
+    .item small{display:block;color:var(--pool);font-weight:400;margin-top:2px}
+    .send{margin-top:28px;padding:22px;border-radius:18px;background:rgba(255,240,194,.06);border:1px solid rgba(255,240,194,.2)}
+    .send h3{margin:0 0 6px;font:800 1.1rem var(--display)}
+    .send p{color:var(--pool);margin:0 0 10px}
+    .send .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:14px}
+    .send .btn{background:var(--tang);border-color:var(--tang);color:var(--plum)}
+    .send .btn.alt{background:transparent;color:var(--butter);border-color:rgba(255,240,194,.5)}
+    .send .status{min-height:1.4em;margin-top:12px;color:var(--butter)}
+    .send input[type=file]{margin-top:10px;color:var(--butter);max-width:100%}
+    [hidden]{display:none!important}
+  </style>
+</head>
+<body>
+<main class="me">
+  <div class="wrap">
+    <div class="me-head">
+      <img src="../assets/favicon.svg" alt="Trainer Trev logo">
+      <div>
+        <h1>My toolkit</h1>
+        <p>Everything to hand out, print or post. Always the latest.</p>
+      </div>
+    </div>
+
+    <form class="lock" id="lock" autocomplete="on">
+      <label for="pw">Password</label>
+      <input type="password" id="pw" name="password" autocomplete="current-password" required autofocus>
+      <div class="row">
+        <span class="remember"><input type="checkbox" id="remember" checked> <label for="remember">Remember on this device</label></span>
+        <button class="btn btn-primary" type="submit" id="go">Open</button>
+      </div>
+      <div class="msg" id="msg" role="status"></div>
+    </form>
+
+    <div id="vault" hidden>
+      <section id="todo" style="padding:0">
+        <h2>Needed from you</h2>
+        <p class="todo-intro">Fill what you can. Tick each one when done. Your answers save on this device as you type. Nothing is sent until you tap Send.</p>
+        <div class="progress" aria-hidden="true"><i id="bar"></i></div>
+        <p class="todo-intro" id="count"></p>
+        <div id="todo-list"></div>
+        <div class="send" id="send">
+          <h3>Send it to Venkat</h3>
+          <p>Photos and video: paste a link to a shared folder (iCloud, Google Drive, Dropbox) and share it with Venkat. Small files can be attached below. Only choose photos you are happy for us to use.</p>
+          <input type="text" id="folder" placeholder="Link to shared photo or video folder" aria-label="Link to shared photo or video folder">
+          <input type="file" id="files" multiple accept="image/*,video/*,.pdf" aria-label="Attach files" hidden>
+          <input type="email" id="reply" placeholder="Your email or phone, so we can reply" aria-label="Your email or phone">
+          <div class="btns">
+            <button class="btn" type="button" id="sendbtn" hidden>Send</button>
+            <button class="btn alt" type="button" id="dl">Download my answers</button>
+            <button class="btn alt" type="button" id="copy">Copy my answers</button>
+          </div>
+          <div class="status" id="status" role="status"></div>
+        </div>
+      </section>
+      <div id="sections"></div>
+      <p class="note">Tap anything to open it in your phone's viewer. From there use Share or Save. This page is not linked on the site and is hidden from search. <button class="linkish" id="forget" type="button">Lock and forget this device</button></p>
+    </div>
+  </div>
+</main>
+
+<script>
+/* Files in vault/ are AES-256-GCM encrypted (key from the password via PBKDF2-SHA256),
+   built by tools/build.py. Nothing readable is published. The password never leaves the device. */
+(() => {
+  const KEY_STORE = 'tt-me-key';
+  const ORDER = ['Documents', 'Content', 'Brand', 'Logo files', 'Stickers', 'Sticker artwork', 'Wallpapers', 'Social cards', 'Logo documentation', 'Guides'];
+  const $ = id => document.getElementById(id);
+  const store = {
+    get() { try { return localStorage.getItem(KEY_STORE); } catch (e) { return null; } },
+    set(v) { try { localStorage.setItem(KEY_STORE, v); } catch (e) {} },
+    clear() { try { localStorage.removeItem(KEY_STORE); } catch (e) {} }
+  };
+  const b64 = { enc: buf => btoa(String.fromCharCode(...new Uint8Array(buf))), dec: s => Uint8Array.from(atob(s), c => c.charCodeAt(0)) };
+  const hex = h => new Uint8Array(h.match(/../g).map(x => parseInt(x, 16)));
+
+  async function deriveKey(password) {
+    const meta = await (await fetch('vault/meta.json', { cache: 'no-store' })).json();
+    const base = await crypto.subtle.importKey('raw', new TextEncoder().encode(password), 'PBKDF2', false, ['deriveKey']);
+    return crypto.subtle.deriveKey({ name: 'PBKDF2', salt: hex(meta.salt), iterations: meta.iterations, hash: 'SHA-256' },
+      base, { name: 'AES-GCM', length: 256 }, true, ['decrypt']);
+  }
+  async function open(key, path) {
+    const buf = new Uint8Array(await (await fetch(path, { cache: 'no-store' })).arrayBuffer());
+    return crypto.subtle.decrypt({ name: 'AES-GCM', iv: buf.slice(0, 12) }, key, buf.slice(12));
+  }
+
+  async function unlock(key) {
+    const manifest = JSON.parse(new TextDecoder().decode(await open(key, 'vault/manifest.bin'))); // throws on a wrong password
+    const root = $('sections'); root.innerHTML = '';
+    const groups = [...new Set(manifest.map(f => f.group))].sort((a, b) => (ORDER.indexOf(a) + 99) % 99 - (ORDER.indexOf(b) + 99) % 99);
+    const boxes = {};
+    groups.forEach(g => {
+      const s = document.createElement('section'); s.style.padding = '0';
+      s.innerHTML = '<h2></h2><div class="docs"></div><div class="cards"></div>';
+      s.querySelector('h2').textContent = g;
+      root.append(s); boxes[g] = { docs: s.querySelector('.docs'), cards: s.querySelector('.cards') };
+    });
+    await Promise.all(manifest.map(async f => {
+      const mime = f.type === 'text/plain' ? 'text/plain;charset=utf-8' : f.type;
+      const url = URL.createObjectURL(new Blob([await open(key, `vault/${f.id}.bin`)], { type: mime }));
+      const a = document.createElement('a');
+      a.href = url; a.target = '_blank'; a.rel = 'noopener'; a.dataset.order = manifest.indexOf(f);
+      const box = boxes[f.group];
+      if (f.type === 'image/png') {
+        a.download = f.name;
+        const img = document.createElement('img'); img.src = url; img.alt = f.title; img.title = f.title;
+        a.append(img); box.cards.append(a);
+      } else {
+        a.className = 'doc';
+        a.innerHTML = `<strong></strong><span></span><em>${f.name.split('.').pop().toUpperCase()} &middot; ${Math.max(1, Math.round(f.size / 1024))} KB</em>`;
+        a.querySelector('strong').textContent = f.title; a.querySelector('span').textContent = f.desc;
+        box.docs.append(a);
+      }
+    }));
+    Object.values(boxes).forEach(b => {
+      ['docs', 'cards'].forEach(k => {
+        [...b[k].children].sort((x, y) => x.dataset.order - y.dataset.order).forEach(n => b[k].append(n));
+        if (!b[k].children.length) b[k].hidden = true;
+      });
+    });
+    if (!todoDrawn) drawTodo();
+    $('lock').hidden = true; $('vault').hidden = false;
+  }
+
+  /* ---- Needed from you: checklist, saved on this device, sent only on request ---- */
+  /* TODO (Venkat): set ENDPOINT to a form service address to turn on the Send button.
+     Example: https://formsubmit.co/ajax/your-email  (check its attachment size limit).
+     Left empty, Trevor can still download or copy his answers and message them to you. */
+  const ENDPOINT = '';
+  const TODO = [
+    ['Facts only you know', [
+      ['cert', 'Pilates certification: school, level, year'],
+      ['years', 'Years teaching'],
+      ['other', 'Other certificates (CPR and AED, group fitness, personal training)'],
+      ['story', 'Your story in two lines', 'In your own words. Plain is fine.'],
+      ['email', 'Business email for the contact button'],
+      ['phone', 'Phone, if you want it public'],
+      ['book', 'Booking link, or say you want a simple form'],
+      ['price', 'Private session length and price'],
+      ['packs', 'Package prices (1 session, 6 pack, 12 pack, duet)'],
+      ['corp', 'Do you offer office or team sessions? Price'],
+      ['where', 'Where privates take place'],
+      ['openings', 'Weekly openings for privates'],
+      ['cancel', 'Cancellation policy'],
+      ['workshop', 'First workshop: name, date, place, topic, price, spots'],
+      ['travel', 'Resort or cruise: which lines, what dates you can travel']
+    ]],
+    ['Studios and permissions', [
+      ['home', 'Which studio is your home base, and your role at each'],
+      ['name', 'Which studios may we name on the site? (Written OK from each)'],
+      ['outside', 'Can you take outside private clients? Any non solicit or non compete?'],
+      ['video', 'Who owns video of your classes?'],
+      ['never', 'Anything you never want mentioned or shown']
+    ]],
+    ['Photos and video', [
+      ['head', 'New headshot for your profile'],
+      ['action', 'Action photos: Cadillac, Reformer, Mat, with space around you'],
+      ['trip', 'A real trip photo (or skip it)'],
+      ['city', 'A real Chicago skyline or lake photo'],
+      ['reel', 'Footage for a resort ready reel, marked "demo" if not a real gig'],
+      ['release', 'Release for anyone who appears. No faces without it']
+    ]],
+    ['Decisions', [
+      ['bio', 'Pick Instagram bio Option A, B or C (see Instagram setup above)'],
+      ['logo', 'Your reaction to the logo: love, fine, or change. Tell us what feels wrong'],
+      ['quotes', 'Real client quotes you have permission to use'],
+      ['start', 'Start date for the 30 day plan']
+    ]]
+  ];
+  const SAVE = 'tt-me-todo';
+  let todoDrawn = false;
+  const data = (() => { try { return JSON.parse(localStorage.getItem(SAVE)) || {}; } catch (e) { return {}; } })();
+  const keep = () => { try { localStorage.setItem(SAVE, JSON.stringify(data)); } catch (e) {} };
+  const ids = TODO.flatMap(g => g[1].map(i => i[0]));
+
+  function refresh() {
+    const n = ids.filter(k => data[k] && data[k].done).length;
+    $('bar').style.width = Math.round(100 * n / ids.length) + '%';
+    $('count').textContent = n + ' of ' + ids.length + ' done';
+  }
+  function drawTodo() {
+    todoDrawn = true;
+    const root = $('todo-list'); root.innerHTML = '';
+    TODO.forEach(([title, items]) => {
+      const g = document.createElement('div'); g.className = 'todo-group';
+      g.innerHTML = '<h3></h3>'; g.querySelector('h3').textContent = title;
+      items.forEach(([k, label, hint]) => {
+        const d = data[k] = data[k] || { done: false, note: '' };
+        const el = document.createElement('div'); el.className = 'item' + (d.done ? ' done' : '');
+        el.innerHTML = '<label class="tick"><input type="checkbox"><span><span class="t"></span><small></small></span></label><textarea rows="1" placeholder="Your answer, or leave blank if you will send it another way"></textarea>';
+        el.querySelector('.t').textContent = label;
+        el.querySelector('small').textContent = hint || '';
+        el.querySelector('small').hidden = !hint;
+        const box = el.querySelector('input'), ta = el.querySelector('textarea');
+        box.checked = d.done; ta.value = d.note;
+        box.addEventListener('change', () => { d.done = box.checked; el.classList.toggle('done', d.done); keep(); refresh(); });
+        ta.addEventListener('input', () => { d.note = ta.value; keep(); });
+        g.append(el);
+      });
+      root.append(g);
+    });
+    $('folder').value = data._folder || ''; $('reply').value = data._reply || '';
+    $('folder').addEventListener('input', e => { data._folder = e.target.value; keep(); });
+    $('reply').addEventListener('input', e => { data._reply = e.target.value; keep(); });
+    refresh();
+  }
+  function answers() {
+    const lines = ['Trevor: needed from you', 'Date: ' + new Date().toLocaleString(), ''];
+    TODO.forEach(([title, items]) => {
+      lines.push('== ' + title + ' ==');
+      items.forEach(([k, label]) => {
+        const d = data[k] || {};
+        lines.push((d.done ? '[x] ' : '[ ] ') + label);
+        if (d.note) lines.push('    ' + d.note.replace(/\n/g, '\n    '));
+      });
+      lines.push('');
+    });
+    lines.push('Photo folder link: ' + (data._folder || '(none)'), 'Reply to: ' + (data._reply || '(none)'));
+    return lines.join('\n');
+  }
+  $('dl').addEventListener('click', () => {
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([answers()], { type: 'text/plain;charset=utf-8' }));
+    a.download = 'trevor-answers.txt'; a.click();
+    $('status').textContent = 'Saved. Send the file to Venkat.';
+  });
+  $('copy').addEventListener('click', async () => {
+    try { await navigator.clipboard.writeText(answers()); $('status').textContent = 'Copied. Paste it into a message to Venkat.'; }
+    catch (e) { $('status').textContent = 'Could not copy. Use Download instead.'; }
+  });
+  if (ENDPOINT) {
+    $('sendbtn').hidden = false; $('files').hidden = false;
+    $('sendbtn').addEventListener('click', async () => {
+      const b = $('sendbtn'); b.disabled = true; $('status').textContent = 'Sending...';
+      try {
+        const f = new FormData();
+        f.append('_subject', 'Trevor: needed from you');
+        f.append('answers', answers());
+        [...$('files').files].forEach(x => f.append('attachment', x));
+        const r = await fetch(ENDPOINT, { method: 'POST', body: f, headers: { Accept: 'application/json' } });
+        if (!r.ok) throw new Error('bad');
+        $('status').textContent = 'Sent. Thank you. You can keep editing and send again.';
+      } catch (e) { $('status').textContent = 'Did not send. Use Download or Copy and message it to Venkat.'; }
+      finally { b.disabled = false; }
+    });
+  }
+
+  $('lock').addEventListener('submit', async e => {
+    e.preventDefault();
+    $('go').disabled = true; $('msg').textContent = 'Unlocking...';
+    try {
+      const key = await deriveKey($('pw').value);
+      await unlock(key);
+      if ($('remember').checked) store.set(b64.enc(await crypto.subtle.exportKey('raw', key)));
+      $('msg').textContent = '';
+    } catch (err) {
+      $('msg').textContent = 'That password did not work. Try again.';
+      $('pw').select();
+    } finally { $('go').disabled = false; }
+  });
+  $('forget').addEventListener('click', () => { store.clear(); location.reload(); });
+
+  const saved = store.get();
+  if (saved) {
+    crypto.subtle.importKey('raw', b64.dec(saved), 'AES-GCM', true, ['decrypt']).then(unlock).catch(() => store.clear());
+  }
+})();
+</script>
+</body>
+</html>
